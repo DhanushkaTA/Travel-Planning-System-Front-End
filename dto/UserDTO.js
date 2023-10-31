@@ -3,7 +3,7 @@ export class UserDTO{
 
 
     constructor(userId,userFullName,username,userPassword,
-                userIdNum,userIdType,userEmail,userAddress,userDob,userGender) {
+                userIdNum,userIdType,userEmail,userAddress,userDob,userGender,userContactNum) {
         this.userId=userId;
         this.userFullName=userFullName;
         this.username=username;
@@ -14,6 +14,7 @@ export class UserDTO{
         this.userAddress=userAddress;
         this.userDob=userDob;
         this.userGender=userGender;
+        // this.userContactNum=userContactNum;
     }
 
     get _userId() {
@@ -46,6 +47,9 @@ export class UserDTO{
     get _userGender(){
         return this.userGender;
     }
+    // get _userContactNum(){
+    //     return this.userContactNum;
+    // }
 
     set _userId(userId){
         this.userId=userId;
@@ -77,4 +81,7 @@ export class UserDTO{
     set _userGender(userGender){
         this.userGender=userGender;
     }
+    // set _userContactNum(userContactNum){
+    //     this.userContactNum=userContactNum;
+    // }
 }

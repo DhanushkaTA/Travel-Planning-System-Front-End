@@ -412,15 +412,15 @@ export class UserRegController {
         isNicTwo=false;
     }
 
-    setImage(storeTo,element){
+    setImage(file,element){
         console.log("print")
         // storeTo=document.getElementById("profilePicChooser").files[0];
-        console.log(storeTo)
+        console.log(file)
         console.log(element)
 
         if(storeTo){
             var oFReader = new FileReader();
-            oFReader.readAsDataURL(storeTo);
+            oFReader.readAsDataURL(file);
 
             oFReader.onload = function (oFREvent) {
                 element.src = oFREvent.target.result;
