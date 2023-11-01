@@ -146,9 +146,10 @@
     padding:3px 10px;
     border-right:1px solid #5d5d5d;
     background-color: rgba(224, 224, 224, 0.4);
+    color: white;
     font-size: 15px;
     cursor: pointer;
-    color: white;
+
 }
 /*///////////////////////////////////////////*/
 

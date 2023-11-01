@@ -305,7 +305,6 @@ export class VehicleDashboard{
                 }
             })
         }else {
-            console.log("setFIle eke if eka athula");
             fileArray.map(value => {
                 if (value.status===true){
                     let imageTag=document.getElementById(value.fileName);
@@ -317,13 +316,9 @@ export class VehicleDashboard{
             })
         }
         this.resetStatus();
-        console.log("setFIle eka iwarai");
     }
 
     setImage(file,imageTag){
-        // console.log("print")
-        // console.log(file)
-        // console.log(imageTag);
         if(file){
             var oFReader = new FileReader();
             oFReader.readAsDataURL(file);
@@ -448,58 +443,6 @@ export class VehicleDashboard{
         $("#model-container").css("display","flex");
     }
 
-    setDataToTable(){
-        $("#vehicleTable > tbody >tr >td").remove();
-
-        let status="Eligible";
-
-        let value="Mid rang";
-
-        let row="<tr>\n" +
-        "                            <td>\n" +
-        "                                <img src=\"../assets/image/vehicle/2020-Land-Rover-Defender-110-SUV-Silver-1001x565%20(3).jpg\">\n" +
-        "                            </td>\n" +
-        "                            <td>ABX-5962</td>\n" +
-        "                            <td>Land Rover Defender</td>\n" +
-        "                            <td><span>"+value+"</span></td>\n" +
-        "                            <td>Yes</td>\n" +
-        "                            <td>Petrol</td>\n" +
-        "                            <td>10Km</td>\n" +
-        "                            <td>7</td>\n" +
-        "                            <td><strong>500</strong> </td>\n" +
-        "                            <td><strong>10000</strong> </td>\n" +
-        "                            <td><span >"+status+"</span></td>\n" +
-        "                            <td>\n" +
-        "                                <div><i class=\"uil uil-expand-from-corner\"></i></div>\n" +
-        "                            </td>\n" +
-        "                            <td>\n" +
-        "                                <div><i class=\"uil uil-sync\"></i></div>\n" +
-        "                            </td>\n" +
-        "                            <td>\n" +
-        "                                <div><i class=\"uil uil-trash-alt\"></i></div>\n" +
-        "                            </td>\n" +
-        "                        </tr>"
-
-        $('#vehicleTable tbody').append(row);
-        if(status==="Eligible"){
-            $("#vehicleTable > tbody >tr >td:nth-last-child(4) > span").addClass("economy")
-        }else {
-            $("#vehicleTable > tbody >tr >td:nth-last-child(4) > span").addClass("luxury")
-        }
-
-        if(value==="S-Luxury"){
-            $("#vehicleTable > tbody >tr:last-child >td:nth-child(4) > span").addClass("super-luxury")
-        }else if (value==="Luxury"){
-            $("#vehicleTable > tbody >tr:last-child >td:nth-child(4) > span").addClass("luxury")
-        }else if(value==="Economy"){
-            $("#vehicleTable > tbody >tr:last-child >td:nth-child(4) > span").addClass("economy")
-        }else {
-            $("#vehicleTable > tbody >tr:last-child >td:nth-child(4) > span").addClass("mid-range")
-        }
-
-
-    }
-
     loadDataToTable(vehicleList){
         $("#vehicleTable > tbody >tr >td").remove();
 
@@ -576,12 +519,10 @@ export class VehicleDashboard{
 
                     this.createFormData();
 
-                    // Swal.fire('Saved!', '', 'success')
                 } else if (result.isDenied) {
                     $("#model-container").css("z-index","10000");
                     $("#model-container").css("visibility","visible");
 
-                    // Swal.fire('Changes are not saved', '', 'info')
                 }
             })
 

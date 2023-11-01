@@ -24,15 +24,6 @@ export class UserDashboard{
 
     }
 
-    // handleUpdateBtnClickEvent(){
-    //     $('#userTable tbody').on('click', 'tr td:nth-last-child(3)', (event) => {
-    //
-    //         let user=this.findContactNumber($(event.target).closest('tr').find('td').eq(1).find('strong').text());
-    //
-    //         UserUpdateController.setUpdateUserDetails(user);
-    //
-    //     });
-    // }
 
     handleViewBtnClickEvent(){
 
