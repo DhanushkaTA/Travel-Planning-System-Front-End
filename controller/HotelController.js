@@ -58,6 +58,7 @@ export class GuideController{
         });
 
         $("#allBtn").on("click",() => {
+            $("#searchTxt").val("");
             $("#allBtn").addClass("color");
             this.getAllDataFromDb();
         });
