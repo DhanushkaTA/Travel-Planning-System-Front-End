@@ -653,13 +653,13 @@ export class VehicleDashboard{
 
     sendUpdateRequest(formData){
         $.ajax({
-            url:"http://localhost:8080/api/v1/vehicle/update",
+            url:"http://localhost:8083/api/v1/vehicle/update",
             method:"PUT",
             processData: false,
             contentType:false,
             data:formData,
             success:(resp) => {
-                if (resp.code==="200"){
+                if (resp.code===200){
                     $("#model-container").css("display","none");
                     Swal.fire({
                         position: 'center',
@@ -704,13 +704,13 @@ export class VehicleDashboard{
 
     getFilteredDataFromDb(path){
         $.ajax({
-            url:"http://localhost:8080/api/v1/vehicle/"+path,
+            url:"http://localhost:8083/api/v1/vehicle/"+path+"/0",
             method:"GET",
             processData: false,
             contentType:false,
             // data:formData,
             success:(resp) => {
-                if (resp.code==="200"){
+                if (resp.code===200){
                     console.log(resp.message);
                     // alert("user get");
                     if(resp.data.length>0){
@@ -730,16 +730,18 @@ export class VehicleDashboard{
     }
 
     getDataFromDb(){
+        console.log("kkkkk")
         $.ajax({
-            url:"http://localhost:8080/api/v1/vehicle/find/all/"+direction,
+            url:"http://localhost:8083/api/v1/vehicle/find/all",
             method:"GET",
             processData: false,
             contentType:false,
             // data:formData,
             success:(resp) => {
-                if (resp.code==="200"){
+                console.log(resp)
+                if (resp.code===200){
                     console.log(resp.message);
-                    // alert("user get");
+                    // alert(resp.data);
                     if(resp.data.length>0){
                         vehicleArray=resp.data;
                         this.loadDataToTable(resp.data);
@@ -756,12 +758,12 @@ export class VehicleDashboard{
 
     findVehicleFromDb(vehicleNumber){
         $.ajax({
-            url:"http://localhost:8080/api/v1/vehicle/find/"+vehicleNumber,
+            url:"http://localhost:8083/api/v1/vehicle/find/"+vehicleNumber,
             method:"GET",
             processData: false,
             contentType:false,
             success:(resp) => {
-                if (resp.code==="200"){
+                if (resp.code===200){
                     console.log(resp.message);
                     console.log(resp.data);
                     if(resp.data===null){
@@ -798,12 +800,12 @@ export class VehicleDashboard{
 
     deleteDataFromDb(vehicleNumber){
         $.ajax({
-            url:"http://localhost:8080/api/v1/vehicle/delete/"+vehicleNumber,
+            url:"http://localhost:8083/api/v1/vehicle/delete/"+vehicleNumber,
             method:"DELETE",
             processData: false,
             contentType:false,
             success:(resp) => {
-                if (resp.code==="200"){
+                if (resp.code===200){
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
@@ -826,13 +828,13 @@ export class VehicleDashboard{
 
     sentRequest(formData){
         $.ajax({
-            url:"http://localhost:8080/api/v1/vehicle/save",
+            url:"http://localhost:8083/api/v1/vehicle/save",
             method:"POST",
             processData: false,
             contentType:false,
             data:formData,
             success:(resp) => {
-                if (resp.code==="200"){
+                if (resp.code===200){
                     $("#model-container").css("display","none");
                     Swal.fire({
                         position: 'center',

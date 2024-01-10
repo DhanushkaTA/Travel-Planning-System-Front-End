@@ -32,6 +32,7 @@ let pattern=[id,fullName,dob,contact,email,address,value];
 export class GuideController{
     constructor() {
         $("#addBtn").on("click",() => {
+            $('#submitBtn').css("display","flex");
             isUpdate=false;
             // this.loadDataToTable();
             // this.getAllDataFromDb();
@@ -216,6 +217,7 @@ export class GuideController{
 
     handleViewBtnClickEvent(){
         $('#guide-container').on('click', 'li > div:nth-last-child(1) > div:nth-last-child(3)', (event) => {
+            $('#submitBtn').css("display","none");
             let guidId=$(event.target).closest('li').find('strong').eq(0).text()
             let guide=this.getGuideObject(guidId);
             this.setDataToPopupFields(guide)
@@ -226,7 +228,9 @@ export class GuideController{
     }
 
     handleUpdateBtnClickEvent(){
+
         $('#guide-container').on('click', 'li > div:nth-last-child(1) > div:nth-last-child(2)', (event) => {
+            $('#submitBtn').css("display","flex");
             isUpdate=true;
             this.creatFileUpdateArray();
             let guidId=$(event.target).closest('li').find('strong').eq(0).text()
@@ -408,7 +412,22 @@ export class GuideController{
             formData.append("guideId",fileArray[2].file)
             formData.append("pic",fileArray[0].file)
 
-            this.sendDataToDb(formData,"POST","save")
+            //Saved alert
+            Swal.fire({
+                title: "Do you want to save this?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, save it!"
+            }).then((result) => {
+
+                this.sendDataToDb(formData,"POST","save")
+
+            });
+
+
         }else {
             fileUpdateArray.map(value => {
 
@@ -438,7 +457,23 @@ export class GuideController{
                     // formData.append("images",value.modifyFile);
                 }
             })
-            this.sendDataToDb(formData,"PUT","update")
+
+            //Update alert
+            Swal.fire({
+                title: "Do you want to update this?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, update it!"
+            }).then((result) => {
+
+                this.sendDataToDb(formData,"PUT","update")
+
+            });
+
+
         }
     }
 
@@ -491,13 +526,13 @@ export class GuideController{
 
     sendDataToDb(formData,method,path){
         $.ajax({
-            url:"http://localhost:8080/api/v1/guide/"+path,
+            url:"http://localhost:8082/api/v1/guide/"+path,
             method:method,
             processData: false,
             contentType:false,
             data:formData,
             success:(resp) => {
-                if (resp.code==="200"){
+                if (resp.code===200){
 
                     $("#model-container").css("display","none");
                     Swal.fire({
@@ -522,12 +557,12 @@ export class GuideController{
 
     sendRequestToDb(path,method){
         $.ajax({
-            url:"http://localhost:8080/api/v1/guide/"+path,
+            url:"http://localhost:8082/api/v1/guide/"+path,
             method:method,
             processData: false,
             contentType:false,
             success:(resp) => {
-                if (resp.code==="200"){
+                if (resp.code===200){
                     console.log(resp.message);
                     // alert("user get");
                     if(method==="GET"){
@@ -555,12 +590,12 @@ export class GuideController{
 
     getAllDataFromDb(){
         $.ajax({
-            url:"http://localhost:8080/api/v1/guide/find/all",
+            url:"http://localhost:8082/api/v1/guide/find/all",
             method:"GET",
             processData: false,
             contentType:false,
             success:(resp) => {
-                if (resp.code==="200"){
+                if (resp.code===200){
                     console.log(resp.message);
 
                     if(resp.data.length>0){

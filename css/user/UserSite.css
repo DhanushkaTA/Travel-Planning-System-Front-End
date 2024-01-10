@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: rgba(0, 0, 0, 0.73);
+    visibility: visible;
+}
+
+.landing{
+    width: 99.5vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(12, 8, 37, 0.3), rgba(10, 6, 35, 0.3));
+    /*background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3));*/
+    padding: 0.5%;
+    position: relative;
+
+    overflow: hidden;
+}
+
+/*----------Nav bar styles----------------*/
+
+nav{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 7%;
+}
+
+/*----------Nav bar logo styles----------------*/
+
+.nav-bar .logo{
+    color: rgba(255, 255, 255, 0.76);
+    font-weight: 1000;
+    font-size: calc(2.3vw);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+}
+
+/*----------Nav bar menu styles----------------*/
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+}
+
+nav ul li div{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+
+    background-color: #0E4046;
+    padding: 10px 30px;
+    border-radius: 50px;
+
+    transition: 0.5s all;
+}
+
+nav ul li div:hover{
+    border: 3px solid #0E4046;
+    background-color: transparent;
+    font-weight: bolder;
+}
+
+/*---------------------User Image Styles-------------------*/
+
+#dropdown{
+    display: none;
+}
+
+#my-accountBtn{
+    background-color: #E55518;
+    transition: 0.5s all;
+}
+
+#my-accountBtn:hover{
+    border: 3px solid #E55518;
+    background-color: transparent;
+    font-weight: bolder;
+}
+
+#logOutBtn{
+    background-color: white;
+    color: black;
+    transition: 0.5s all;
+}
+
+#logOutBtn:hover{
+    border: 3px solid white;
+    background-color: transparent;
+    font-weight: bolder;
+    color: white;
+}
+
+
+
+/*----------Land page content styles----------------*/
+
+.content{
+    text-align: center;
+}
+
+.content h1{
+    font-size: 130px;
+    font-weight: 600;
+    color: rgb(227, 226, 226);
+    margin-bottom: 5px;
+    transition: 0.5s;
+}
+
+.content h1:hover{
+    -webkit-text-stroke: 2px white;
+    color: transparent;
+}
+
+
+.content h2{
+    color: white;
+}
+
+.content a{
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    font-size: 24px;
+    border: 2px solid white;
+    padding: 14px 70px;
+    border-radius: 50px;
+    margin-top: 30px;
+    transition: color 0.4s linear;
+    position: relative;
+
+    overflow: hidden;
+}
+
+.content a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+    border-radius: 50px;
+}
+
+.content a::before{
+    transform: scaleX(0);
+}
+
+.content a:hover::before{
+    transform: scaleX(1);
+}
+
+.content a:hover{
+
+    /*color: transparent;*/
+}
+
+/*----------Land page video styles----------------*/
+
+.back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    margin: auto;
+    z-index: -2;
+
+}
+
+@media (max-aspect-ratio: 16/5) {
+    .back-video{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-aspect-ratio: 16/5) {
+    .back-video{
+        width: auto;
+        height: 100%;
+    }
+}
+

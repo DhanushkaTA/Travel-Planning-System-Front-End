@@ -232,4 +232,19 @@ body{
     font-family: 'Lexend Zetta', sans-serif;
 }
 
+#logOutBtn{
+    width: max-content;
+    height: 50px!important;
+    padding: 10px;
+    border: 2px solid white;
+    color: white;
+    /*background-color: black;*/
+    text-decoration: none;
+    font-weight: normal;
+    font-family: 'Lexend Zetta', sans-serif;
+
+    cursor: pointer;
+}
+
+
 

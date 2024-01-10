@@ -528,13 +528,13 @@ export class GuideController{
 
     sendDataToDb(formData,method,path){
         $.ajax({
-            url:"http://localhost:8080/api/v1/hotel/"+path,
+            url:"http://localhost:8081/api/v1/hotel/"+path,
             method:method,
             processData: false,
             contentType:false,
             data:formData,
             success:(resp) => {
-                if (resp.code==="200"){
+                if (resp.code===200){
 
                     $("#model-container").css("display","none");
                     Swal.fire({
@@ -559,12 +559,12 @@ export class GuideController{
 
     sendRequestToDb(path,method){
         $.ajax({
-            url:"http://localhost:8080/api/v1/hotel/"+path,
+            url:"http://localhost:8081/api/v1/hotel/"+path,
             method:method,
             processData: false,
             contentType:false,
             success:(resp) => {
-                if (resp.code==="200"){
+                if (resp.code===200){
                     console.log(resp.message);
 
                     if(path==="get/id"){
@@ -598,12 +598,12 @@ export class GuideController{
 
     getAllDataFromDb(){
         $.ajax({
-            url:"http://localhost:8080/api/v1/hotel/find/all",
+            url:"http://localhost:8081/api/v1/hotel/find/all",
             method:"GET",
             processData: false,
             contentType:false,
             success:(resp) => {
-                if (resp.code==="200"){
+                if (resp.code===200){
                     console.log(resp.message);
 
                     if(resp.data.length>0){

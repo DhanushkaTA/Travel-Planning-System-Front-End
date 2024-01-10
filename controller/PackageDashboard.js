@@ -233,9 +233,9 @@ export class VehicleDashboard{
             // $("#vehicleTable > tbody >tr:last-child >td:first-child >.img2").
             //     attr('src',`data:image/jpg;base64,${value.frontImage}`);
 
-            let star=(value.travelPackage_Category==="5 Star") ? 5 :
-                (value.travelPackage_Category==="4 Star") ? 4 :
-                    (value.travelPackage_Category==="3 Star") ? 3 : 2;
+            let star=(value.travelPackage_Category==="S-Luxury") ? 5 :
+                (value.travelPackage_Category==="Luxury") ? 4 :
+                    (value.travelPackage_Category==="Mid-Level") ? 3 : 2;
 
             for (let i=0;i<star;i++){
                 $("#packageTable > tbody > tr:last-child> td:nth-child(2)>span").

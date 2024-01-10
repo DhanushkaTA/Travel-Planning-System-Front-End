@@ -1,0 +1,193 @@
+.position{
+    position: fixed;
+    top: 0;
+
+    z-index: 20000;
+}
+
+.login{
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.56);
+    height: 100vh;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+
+    z-index: 20000;
+}
+
+
+
+.login .login-container{
+    width: 80%;
+    height: 85%;
+
+    background-color: white;
+
+    display: flex;
+}
+
+/*--------------------Declaration Styles--------------------*/
+
+.decoration{
+    width: 70%;
+    height: 100%;
+
+    background-color: #5d5d5d;
+}
+
+/*--------------------Login form Styles--------------------*/
+
+.login-form{
+    width: 30%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    padding: 10px;
+
+    position: relative;}
+
+ /*--------------------Input Fields Styles--------------------*/
+
+.input-field{
+    display: flex;
+    width: 80%;/*200px*/
+    flex-direction: column;
+    margin: 4px 0;
+    position: relative;
+}
+
+.input-field label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+.input-field input{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+
+/*---------------------Password field Styles-------------------*/
+
+#passwordTxt2{
+    padding: 0 34px 0 15px;
+}
+
+.password-Btn{
+    border-radius:0 5px 5px 0;
+    position: absolute;
+    bottom: 3px;
+    right: 0;
+    margin-bottom: 6px;
+    height: 40px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a53be;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+/*--------------------------Login Button Styles----------------------*/
+
+#loginBtn{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    /*border: 1px solid #aaa;*/
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+    background-color: #006CBE;
+
+    cursor: pointer;
+}
+
+/*---------------------Create New Account Styles-------------------*/
+
+.create-new{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+    margin-top: 20px;
+}
+
+.create-new a{
+    text-decoration: none;
+    color: #535BF2;
+}
+
+.site{
+    font-family: 'Lexend Zetta', sans-serif;
+    font-weight: 300;
+    /*margin-top: 100px;*/
+    margin-bottom: 10px;
+}
+
+.text-container{
+    margin-top: auto;
+    text-align: center;
+}
+
+.field-container{
+    margin: auto;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.login-form h1{
+    /*-webkit-text-stroke: 1px black;*/
+    /*color: transparent;*/
+    color: #5153E9;
+}
+
+h2{
+    font-size: 20px;
+}
+
+
+/*---------------------Close btn Styles-------------------*/
+
+#closeBtn{
+    align-self: flex-end;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#closeBtn:hover i{
+    color: #bb0202;
+}
+
+#closeBtn > i{
+    font-size: 35px;
+}
+

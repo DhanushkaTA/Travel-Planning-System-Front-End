@@ -15,14 +15,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@200&family=Playfair+Display:ital,wght@1,900&family=Prompt:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="../css/TravelPackage.css">
+    <link rel="stylesheet" href="../css/TravelPackage2.css">
     <link rel="stylesheet" href="../assets/fontsAwesome/css/all.min.css">
 </head>
 <body>
 
     <main>
+
+        <video autoplay loop muted playsinline class="back-video">
+            <source src="../assets/video/srilanka.mp4"
+                    type="video/mp4">
+        </video>
+
         <section class="select-package" id="selectPackage">
 
             <div class="wrapper">
+
                 <div class="catagory">
                     <div class="category-card" id="s_LuxuryCrd">
                         <div>
@@ -96,7 +104,7 @@
                             <i class="fa-solid fa-star "></i>
                         </div>
                         <div class="labels">
-                            <label><i class="fa-solid fa-check"></i> 5 Star Hotels</label>
+                            <label><i class="fa-solid fa-check"></i> 2 Star Hotels</label>
                             <label><i class="fa-solid fa-check"></i> Mid-Rang Vehicles</label>
                         </div>
                         <div class="check">
@@ -159,19 +167,358 @@
 
                 <div class="next-btn">
                     <button type="button" id="backTpckgBtn"><i class="fa-solid fa-left-long"></i> Back</button>
-                    <button type="button" id="hotelBtn">Next  <i class="fa-solid fa-right-long"></i></button>
+                    <button type="button" id="detailBtn">Next  <i class="fa-solid fa-right-long"></i></button>
                 </div>
             </div>
         </section>
 
-        <section class="select-hotel" id="selectHotel"></section>
-        <section class="select-vehicle"></section>
-        <section class="select-guide"></section>
-        <section class="done"></section>
+        <section class="details" id="details">
+
+            <div class="wrapper">
+
+                <div class="detail-form">
+
+                    <div class="input-field">
+                        <label for="startDate">Start Date</label>
+                        <input id="startDate" type="date"  >
+                    </div>
+
+                    <div class="input-field">
+                        <label for="endDate">End Date</label>
+                        <input id="endDate" type="date"  >
+                    </div>
+
+                    <div class="input-field">
+                        <label for="WithPetCmb">With Pet Or Not</label>
+                        <select id="withPetCmb" required>
+                            <option disabled selected>Select Option</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                        <!--                            <input id="customerGender" type="text"  placeholder="Select gender">-->
+                    </div>
+
+
+                </div>
+
+                <div class="next-btn">
+                    <button type="button" id="backAreaBtn"><i class="fa-solid fa-left-long"></i> Back</button>
+                    <button type="button" id="hotelBtn">Next  <i class="fa-solid fa-right-long"></i></button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="select-hotel" id="selectHotel">
+            <div class="wrapper">
+
+                <div class="hotels">
+                    <h1>Select Your Hotel</h1>
+
+                    <div class="hotel-wrapper">
+                        <div class="table">
+                            <ul id="hotelList">
+
+
+
+                            </ul>
+                        </div>
+
+                        <div class="hotel-details">
+                            <h1>Hotel Details</h1>
+
+                            <div class="room-details">
+                                <div class="col_1">
+                                    <div>
+                                        <label>Full Board A/C Luxury Double Price</label>
+                                    </div>
+                                    <div>
+                                        <label>Half Board A/C Luxury Double Price</label>
+                                    </div>
+                                    <div>
+                                        <label>Full Board A/C Luxury Triple Price</label>
+                                    </div>
+                                    <div>
+                                        <label>Half Board A/C Luxury Triple Price</label>
+                                    </div>
+                                </div>
+
+                                <div class="col_2">
+                                    <div><label id="roomOpt_1">00</label></div>
+                                    <div><label id="roomOpt_2">00</label></div>
+                                    <div><label id="roomOpt_3">00</label></div>
+                                    <div><label id="roomOpt_4">00</label></div>
+                                </div>
+
+                                <div class="col_3">
+                                    <input id="hotelRoom_Opt_1" type="number"  >
+                                    <input id="hotelRoom_Opt_2" type="number"  >
+                                    <input id="hotelRoom_Opt_3" type="number"  >
+                                    <input id="hotelRoom_Opt_4" type="number"  >
+                                </div>
+                            </div>
+
+                            <div class="info">
+
+                                <div class="input-field">
+                                    <label for="travelPackage_No_Adult">Adult Count</label>
+                                    <input id="travelPackage_No_Adult" type="number" placeholder="Enter count" >
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="travelPackage_No_Child">Child Count</label>
+                                    <input id="travelPackage_No_Child" type="number" placeholder="Enter count" >
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="next-btn">
+                    <button type="button" id="backDetailBtn"><i class="fa-solid fa-left-long"></i> Back</button>
+                    <button type="button" id="vehicleBtn">Next  <i class="fa-solid fa-right-long"></i></button>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="select-vehicle" id="selectVehicle">
+            <div class="wrapper">
+
+                <div class="vehicles">
+                    <h1>Select Your Vehicle</h1>
+
+                    <div>
+                        <div class="row-1">
+                            <div class="opt" id="opt_1">
+                                <div id="allBtn" class="color">All</div>
+                                <div id="fuelBtn">Fuel</div>
+                                <div id="transmiBtn">Transmission</div>
+                            </div>
+
+                            <div class="opt" id="opt_2">
+                                <div id="autoBtn" >Auto</div>
+                                <div id="manualBtn">Manual</div>
+                            </div>
+
+                            <div class="opt" id="opt_3">
+                                <div id="petrolBtn" >Petrol</div>
+                                <div id="dieselBtn">Diesel</div>
+                            </div>
+
+                            <div class="opt" id="opt_4">
+                                <div id="ascBtn" class="color">Asc</div>
+                                <div id="descBtn">Desc</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="table">
+                        <ul id="vehicleList">
+
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="next-btn">
+                    <button type="button" id="backHotelBtn"><i class="fa-solid fa-left-long"></i> Back</button>
+                    <button type="button" id="guideBtn">Next  <i class="fa-solid fa-right-long"></i></button>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="select-guide" id="selectGuide">
+            <div class="wrapper">
+                <div class="vehicles">
+
+                    <h1>Select Your Guide</h1>
+
+                    <div>
+                        <div class="row-1">
+
+                            <div class="opt">
+                                Do you need guide ?
+                            </div>
+
+                            <div class="opt">
+                                <div id="yesBtn">Yes</div>
+                                <div id="noBtn">No</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="table">
+                        <ul id="guideList">
+
+<!--                            <li class="guide-card">-->
+<!--                                <img src="../assets/image/image_2.jpg">-->
+<!--                                <strong>990771162</strong>-->
+<!--                                <label>Onali Samarasinha</label>-->
+<!--                                <span ></span>-->
+<!--                                <div class="data">-->
+<!--                                    <label>Man Day Fee</label>-->
+<!--                                    <label>5000</label>-->
+<!--                                </div>-->
+<!--                                <div class="data">-->
+<!--                                    <label>onali101@gmail.com</label>-->
+<!--                                </div>-->
+<!--                                <div class="data">-->
+<!--                                    <label>phone no</label>-->
+<!--                                    <label>0702037168</label>-->
+<!--                                </div>-->
+<!--                                <div class="option-btn">-->
+<!--                                    <div>SELECT</div>-->
+<!--                                </div>-->
+<!--                            </li>-->
+
+
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="next-btn">
+                    <button type="button" id="backVehicleBtn"><i class="fa-solid fa-left-long"></i> Back</button>
+                    <button type="button" id="doneBtn">Next  <i class="fa-solid fa-right-long"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="done" id="placePackage">
+            <div class="wrapper">
+
+                <div class="container-form">
+
+                    <h1>Details & Payment</h1>
+
+                    <div class="details-form">
+                        <div class="value hotel">
+
+
+                                <div class="input-field">
+                                    <label for="hotel_Id">Hotel Id</label>
+                                    <input disabled id="hotel_Id" type="text">
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="opt1">Full Board A/C Luxury Double</label>
+                                    <input disabled id="opt1" type="text">
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="opt2">Half Board A/C Luxury Double</label>
+                                    <input disabled id="opt2" type="text" >
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="opt3">Full Board A/C Luxury Triple</label>
+                                    <input disabled id="opt3" type="text" >
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="opt4">Half Board A/C Luxury Triple</label>
+                                    <input disabled id="opt4" type="text" >
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="opt4">Hotel Total</label>
+                                    <input disabled id="hotelTotal" type="text" >
+                                </div>
+
+
+
+                        </div>
+                        <div class="value vehicle">
+
+                            <div class="input-field">
+                                <label for="vehicle_Id">Vehicle Id</label>
+                                <input disabled id="vehicle_Id" type="text">
+                            </div>
+
+                            <div class="input-field">
+                                <label for="vehicle_Brand">Vehicle Brand</label>
+                                <input disabled id="vehicle_Brand" type="text">
+                            </div>
+
+<!--                            <div class="input-field">-->
+<!--                                <label for="km">Enter km to destination</label>-->
+<!--                                <input id="km" type="text">-->
+<!--                            </div>-->
+
+                            <div class="input-field">
+                                <label for="vehicleTotal">Total for Vehicle</label>
+                                <input disabled id="vehicleTotal" type="text" >
+                            </div>
+
+                            <div class="input-field">
+                                <label for="guide_Id">Guide Id</label>
+                                <input disabled id="guide_Id" type="text" >
+                            </div>
+
+                            <div class="input-field">
+                                <label for="guideTotal">Total for Guide</label>
+                                <input disabled id="guideTotal" type="text" >
+                            </div>
+
+                            <div class="input-field">
+                                <label for="placeDate">Place Date</label>
+                                <input id="placeDate" type="date" >
+                            </div>
+                        </div>
+                        <div class="value payment">
+
+                            <div class="input-field">
+                                <label for="packageTotal">Package Total</label>
+                                <input disabled id="packageTotal" type="text" >
+                            </div>
+
+
+
+
+                            <div class="input-field">
+                                <label for="paideTotal">Paid Fee</label>
+                                <input id="paideTotal" type="text" >
+                            </div>
+
+                            <div class="input-field">
+                                <label for="restTotal">Rest</label>
+                                <input disabled id="restTotal" type="text" >
+                            </div>
+
+                            <div  class="input-field">
+                                <label class="middle" for="slipImage">Bank Slip</label>
+                                <img id="slipImage" src="../assets/image/image-upload-preview.png" alt="image">
+                            </div>
+
+                            <div class="">
+                                <input id="fileChooser" type="file">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="next-btn">
+                    <button type="button" id="backGuideBtn"><i class="fa-solid fa-left-long"></i> Back</button>
+                    <button type="button" id="placeBtn">Place  <i class="fa-solid fa-right-long"></i></button>
+                </div>
+
+            </div>
+        </section>
     </main>
 
     <script src="../assets/jquery/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <script type="module" src="../controller/TravelPackage.js"></script>
+
 </body>
 </html>
