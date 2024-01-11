@@ -1,0 +1,96 @@
+.account-details{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.56);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+
+    z-index: 200;
+
+}
+
+.details-container{
+    background-color: white;
+
+    width: 30%;
+    height: 99%;
+
+    position: relative;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#full-name{
+    color: #8535e7;
+
+    font-size: 25px !important;
+    font-weight: 600;
+}
+
+/*--------------------------Name Contact Styles----------------------*/
+
+#name-contact , #password-update{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    /*margin-top: 15px;*/
+}
+
+/*--------------------------Login Button Styles----------------------*/
+
+#updateBtn,#updatePasswordBtn{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    /*border: 1px solid #aaa;*/
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+    background-color: #006CBE;
+
+    cursor: pointer;
+}
+
+/*---------------------Close btn Styles-------------------*/
+
+#closeDetailsBtn{
+    align-self: flex-end;
+    cursor: pointer;
+    margin: 10px 10px 0 0;
+    font-size: 8px;
+    font-weight: normal;
+}
+
+#closeDetailsBtn:hover i{
+    color: #bb0202;
+}
+
+#closeDetailsBtn > i{
+    font-size: 25px;
+}
+
+#update-profile{
+    margin-bottom: 10px;
+}
+
+#warning{
+    color: #bb0202;
+    font-size: 12px;
+    display: none;
+}

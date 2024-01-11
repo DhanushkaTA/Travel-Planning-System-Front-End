@@ -332,16 +332,17 @@ export class UserRegController {
 
     sendRequest(formData){
         $.ajax({
-            url:"http://localhost:8080/api/v1/user/save",
+            url:"http://localhost:9191/api/v1/user/save",
             method:"POST",
             processData: false,
             contentType:false,
             data:formData,
             success:(resp) => {
-                if (resp.code==="200"){
+                if (resp.code===200){
                     console.log(resp.message);
                     alert("user saved");
                     this.clear();
+                    location.reload(true);
                 }
             },
             error:(ob)=>{
@@ -377,7 +378,8 @@ export class UserRegController {
             $("#customerEmail").val(),
             $("#customerAddress").val(),
             $("#customerDob").val(),
-            $("#customerGender").val()
+            $("#customerGender").val(),
+            $("#customerContact").val()
         );
 
         console.log(user);
@@ -418,7 +420,7 @@ export class UserRegController {
         console.log(file)
         console.log(element)
 
-        if(storeTo){
+        if(file){
             var oFReader = new FileReader();
             oFReader.readAsDataURL(file);
 

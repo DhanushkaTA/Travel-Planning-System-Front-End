@@ -18,9 +18,8 @@ export class UserDashboard{
         })
 
         this.handleViewBtnClickEvent();
+        this.getDataFromDb();
         // this.handleUpdateBtnClickEvent()
-
-        // this.getDataFromDb();
 
     }
 
@@ -152,7 +151,7 @@ export class UserDashboard{
                 "<!--                        <td>onali99@gmail.com</td>-->\n" +
                 "                        <td>"+value.userGender+"</td>\n" +
                 "                        <td>"+value.userDob+"</td>\n" +
-                "                        <td>207/02,Nupe,Mathara</td>\n" +
+                "                        <td>"+value.userAddress+"</td>\n" +
                 "                        <td>\n" +
                 "                            <div><i class=\"uil uil-file-check-alt\"></i></div>\n" +
                 "                        </td>\n" +
@@ -168,8 +167,12 @@ export class UserDashboard{
 
 
             userTable.append(row);
+
             console.log($(".img2").length-1)
-            $(".img2").attr('src',`data:image/jpg;base64,${value.profileImage}`);
+            // $(".img2").attr('src',`data:image/jpg;base64,${value.profileImage}`);
+
+            $("#userTable > tbody >tr:last-child >td:first-child >.img2").
+            attr('src',`data:image/jpg;base64,${value.profileImage}`);
         })
 
     }

@@ -107,13 +107,13 @@ nav ul li div:hover{
     font-weight: bolder;
 }
 
-#logOutBtn{
+#logOutBtn,#cartBtn{
     background-color: white;
     color: black;
     transition: 0.5s all;
 }
 
-#logOutBtn:hover{
+#logOutBtn:hover,#cartBtn:hover{
     border: 3px solid white;
     background-color: transparent;
     font-weight: bolder;

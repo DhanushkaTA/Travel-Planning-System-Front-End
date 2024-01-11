@@ -20,6 +20,8 @@
 
     <link rel="stylesheet" href="css/user/UserSite.css">
     <link rel="stylesheet" href="css/user/UserLogin.css">
+    <link rel="stylesheet" href="css/user/AccountDetails.css">
+    <link rel="stylesheet" href="css/user/PackageWindow.css">
 
 
 </head>
@@ -42,7 +44,14 @@
             </ul>
 
             <ul id="dropdown">
-                <li><div id="logOutBtn">Logout</div></li>
+                <li><div id="logOutBtn">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </div></li>
+
+                <li><div id="cartBtn">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div></li>
+<!--                <li><div id="logOutBtn">Logout</div></li>-->
 
                 <li id="accBtn-container">
                     <div id="my-accountBtn">
@@ -56,7 +65,7 @@
         <div class="content">
             <h1>Explore Sri Lanka</h1>
             <h2>Enjoy Your Dream Vacation</h2>
-            <a href="pages/TravelPackage.html">Explore</a>
+            <a id="packageLink" href="pages/TravelPackage.html">Explore</a>
         </div>
     </div>
 
@@ -72,7 +81,7 @@
             <div class="login-form">
 
                 <div id="closeBtn">
-                    <i class="uil uil-times"></i>
+                    <i class="fa-solid fa-xmark"></i>
                 </div>
 
                 <div class="text-container">
@@ -98,7 +107,7 @@
 
                     <div class="create-new">
                         Don't have a account?
-                        <a href="#">Create Account</a>
+                        <a href="pages/User.html">Create Account</a>
                     </div>
 
                 </div>
@@ -118,10 +127,165 @@
 
     <div class="account-details">
 
+        <div class="details-container">
+
+            <div id="closeDetailsBtn">
+<!--                <i class="uil uil-times"></i>-->
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <h1>
+                Welcome
+            </h1>
+            <h1 id="full-name">
+                Tharindu Dhnaushka
+            </h1>
+
+
+        <!--------------------------------name contact details------------------------------------->
+
+            <div id="name-contact">
+
+                <div class="input-field">
+                    <label for="update-username">Username</label>
+                    <input id="update-username" type="text" placeholder="Enter username" >
+                </div>
+
+                <div class="input-field">
+                    <label for="update-email">Email Address</label>
+                    <input id="update-email" type="text" placeholder="Enter Email" >
+                </div>
+
+                <div class="input-field">
+                    <button id="updateBtn" type="button">Update</button>
+                </div>
+
+            </div>
+
+            <!--------------------------------Update Password------------------------------------->
+
+            <div id="password-update">
+
+                <div class="input-field">
+                    <label for="oldPassword">Old Password</label>
+                    <input id="oldPassword" type="password" placeholder="Enter old password">
+                    <div id="oldPasswordBtn" class="password-Btn"><i class="uil uil-eye"></i></div>
+                </div>
+
+                <div class="input-field">
+                    <label for="newPassword">New Password</label>
+                    <input id="newPassword" type="password" placeholder="Enter new password">
+                    <div id="newPasswordBtn" class="password-Btn"><i class="uil uil-eye"></i></div>
+                </div>
+
+                <div class="input-field">
+                    <label for="conformPassword">Conform Password</label>
+                    <input id="conformPassword" type="password" placeholder="Conform password">
+                    <div id="conformPasswordBtn" class="password-Btn"><i class="uil uil-eye"></i></div>
+                </div>
+
+                <div class="input-field">
+                    <button id="updatePasswordBtn" type="button">Update password</button>
+                </div>
+
+            </div>
+
+            <p id="warning">Password Note Matched!!!</p>
+            <a id="update-profile" href="#">Update Full Details</a>
+
+        </div>
+
     </div>
 
+
+    <!----------------------------------  User Package Window --------------------------------->
+
+    <section id="package">
+
+        <div class="package-details-container">
+
+            <div id="closePackageBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <h1>Your Packagers</h1>
+
+            <div class="list-container">
+
+                <table id="package-details" class="">
+                    <thead class="head">
+                    <tr>
+                        <th>Package ID</th>
+                        <th>Category</th>
+                        <th>Location</th>
+                        <th>Hotel</th>
+                        <th>Vehicle</th>
+                        <th>Guide</th>
+                        <th>Fee</th>
+                        <th>Payed</th>
+                        <th>Opt</th>
+                        <th>Opt</th>
+                        <th>Opt</th>
+                    </tr>
+                    </thead>
+                    <tbody class="">
+
+                    <tr>
+                        <td>PK/2022/8/52</td>
+                        <td>
+                            <label class="regular">
+                                Super
+                            </label>
+                        </td>
+                        <td>Down South</td>
+                        <td>
+                           <strong>Blue green Hotel</strong>
+                            <label>H//2023/5/256</label>
+                        </td>
+                        <td>
+                            <strong>Toyota Aqua</strong>
+                            <label>ACD-8596</label>
+                        </td>
+                        <td>
+                            <strong>Supun</strong>
+                            <label>9956889520</label>
+                        </td>
+                        <td>35000</td>
+                        <td>20000</td>
+                        <td>
+                            <div>
+                                <i class="fa-solid fa-maximize"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <i class="fa-regular fa-trash-can"></i>
+                            </div>
+                        </td>
+
+                    </tr>
+
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
     <script src="assets/jquery/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <script type="module" src="controller/userSite/LoginController.js"></script>
+    <script type="module" src="controller/userSite/AccountDetails.js"></script>
+    <script type="module" src="controller/userSite/SiteController.js"></script>
+
 
 </body>
 </html>

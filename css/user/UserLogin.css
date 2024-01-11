@@ -18,7 +18,7 @@
     position: fixed;
     top: 0;
 
-    z-index: 20000;
+    z-index: 20;
 }
 
 
@@ -136,9 +136,13 @@
     margin-top: 20px;
 }
 
-.create-new a{
+/*---------------------Link Styles-------------------*/
+
+.create-new a,#update-profile{
     text-decoration: none;
     color: #535BF2;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 .site{

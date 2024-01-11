@@ -589,7 +589,7 @@ export class TravelPackage{
         $(".check").css("display","none");
     }
 
-    /////////////  Hotel /////////////////
+    /////////////////////////////////////////  Hotel //////////////////////////////////////////
 
     handleHotelSelectBtnClickEvent(){
 
@@ -870,6 +870,8 @@ export class TravelPackage{
         return path;
     }
 
+    ////////////////////////////// AjAX /////////////////////////////////
+
     getFilteredDataFromDb(path){
         $.ajax({
             url:"http://localhost:9191/api/v1/vehicle/"+path+"/0",
@@ -896,8 +898,6 @@ export class TravelPackage{
             }
         })
     }
-
-    ////////////////////////////// AjAX /////////////////////////////////
 
 
     getAllDataFromDb(path){
